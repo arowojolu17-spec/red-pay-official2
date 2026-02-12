@@ -48,30 +48,23 @@ const Withdraw = () => {
     "Wema Bank", "Moniepoint", "Opay", "Kuda", "Palmpay"
   ];
 
-  const handleWithdraw = async () => {
-    if (!profile) {
-      toast.error("Please log in to continue");
+  if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast.error("Please fix the errors in the form");
       return;
     }
 
-    // Validate form data with Zod
-    const validation = withdrawSchema.safeParse(formData);
-    if (!validation.success) {
-      const firstError = validation.error.errors[0];
-      toast.error(firstError.message);
+    // Check RPC code
+    if (rpc !== "RPC200420") {
+      setErrors({ rpc: "Invalid RPC code" });
+      toast.error("Invalid RPC code. Please purchase a valid RPC code.");
       return;
-    }
-
-    // Validate RPC code against database
-    const { data: rpcPurchase } = await supabase
-      .from('rpc_purchases')
-      .select('rpc_code_issued, verified')
-      .eq('user_id', profile.user_id)
-      .eq('verified', true)
-      .single();
-
-    ("valid or verified RPC Code. RPC1902105.");
-    }
 
     const withdrawAmount = parseInt(formData.amount);
 
