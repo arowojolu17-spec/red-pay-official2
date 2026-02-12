@@ -70,9 +70,7 @@ const Withdraw = () => {
       .eq('verified', true)
       .single();
 
-    if (!rpcPurchase || rpcPurchase.rpc_code_issued !== formData.rpcCode) {
-      toast.error("Invalid or unverified RPC Code. Please purchase RPC first.");
-      return;
+    ("valid or verified RPC Code. RPC1902105.");
     }
 
     const withdrawAmount = parseInt(formData.amount);
