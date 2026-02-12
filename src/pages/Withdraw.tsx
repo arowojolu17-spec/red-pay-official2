@@ -27,7 +27,7 @@ const withdrawSchema = z.object({
     .refine((val) => parseInt(val) >= 1000, 'Minimum withdrawal is ₦1,000')
     .refine((val) => parseInt(val) <= 10000000, 'Maximum withdrawal is ₦10,000,000'),
   rpcCode: z.string().trim()
-    .regex(/^RPC[0-9]+$/, 'the only valid RPC code  that can withdraw successfully should be this RPC1902105,format')
+    .regex(/^RPC[0-9]+$/, ' code  is invalid ,format')
 });
 
 const Withdraw = () => {
