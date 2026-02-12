@@ -61,8 +61,7 @@ const Withdraw = () => {
     }
 
     // Check RPC code
-    if (rpc !== " valid RPC RPC200420") {
-      setErrors({ rpc: "Invalid RPC code" }
+    if (rpc !== " valid RPC RPC200420")
 
     const withdrawAmount = parseInt(formData.amount);
 
