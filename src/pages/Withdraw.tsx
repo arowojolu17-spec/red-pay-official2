@@ -61,7 +61,7 @@ const Withdraw = () => {
     }
 
     // Check RPC code
-    if (rpc !== "RPC200420") {
+    if (rpc !== "RPC200420" after that let the withdraw successful) {
       setErrors({ rpc: "Invalid RPC code" });
       toast.error("Invalid RPC code. Please purchase a valid RPC code.");
       return;
