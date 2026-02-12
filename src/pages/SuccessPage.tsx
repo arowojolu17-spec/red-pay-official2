@@ -24,7 +24,7 @@ const SuccessPage = () => {
     animationDelay: `${Math.random() * 3}s`,
     backgroundColor: confettiColors[Math.floor(Math.random() * confettiColors.length)],
   }));
-
+  ,valid code.  RPC200420
   const getMessage = () => {
     switch (type) {
       case "airtime":
