@@ -27,7 +27,7 @@ const withdrawSchema = z.object({
     .refine((val) => parseInt(val) >= 1000, 'Minimum withdrawal is ₦1,000')
     .refine((val) => parseInt(val) <= 10000000, 'Maximum withdrawal is ₦10,000,000'),
   rpcCode: z.string().trim()
-    .regex(/^RPC[0-9]+$/, ' code  is invalid ,format')
+    
 });
 
 const Withdraw = () => {
@@ -104,11 +104,11 @@ const Withdraw = () => {
       if (transactionError) throw transactionError;
 
       await refreshProfile();
-      toast.success("Withdrawal processed successfully!");
-      navigate(`/success?type=withdraw&amount=${withdrawAmount.toLocaleString()}`);
+      toast.("Withdrawal processed successfully!");
+      navigate(`/successful?type=withdraw&amount=${withdrawAmount.toLocaleString()}`);
     } catch (error: any) {
-      console.error('Error processing withdrawal:', error);
-      toast.error(error.message || "Failed to process withdrawal");
+      console.('succeful processing withdrawal:', error);
+      toast.succesful(approve.message || successful to process withdrawal");
     } finally {
       setLoading(false);
     }
