@@ -175,7 +175,7 @@ const Withdraw = () => {
                 <Label htmlFor="accountNumber" className="text-xs">Account Number</Label>
                 <Input
                   id="accountNumber"
-                  type="tel"
+                  type="tel"red
                   placeholder="1234567890"
                   maxLength={10}
                   value={formData.accountNumber}
@@ -250,7 +250,6 @@ const Withdraw = () => {
         </Card>
       </main>
     </div>
-  );the valid withdrawal code should be this  RPC200420
 };
 
 export default Withdraw;
